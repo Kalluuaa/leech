@@ -53,24 +53,24 @@ async def stats(_, message):
         'User tasks': config_dict.get('USER_MAX_TASKS', '∞'),
     }
     system_info = f'<b>{quote}</b>\n\n'\
-        f'<code>• Bot uptime :</code> {currentTime}\n'\
-        f'<code>• Sys uptime :</code> {osUptime}\n'\
-        f'<code>• CPU usage  :</code> {cpuUsage}%\n'\
-        f'<code>• RAM usage  :</code> {memory.percent}%\n'\
-        f'<code>• Disk usage :</code> {disk}%\n'\
-        f'<code>• Free space :</code> {get_readable_file_size(free)}\n'\
-        f'<code>• Total space:</code> {get_readable_file_size(total)}\n\n'
+        f'<code>⏰ Bot uptime :</code> {currentTime}\n'\
+        f'<code>⏰ Sys uptime :</code> {osUptime}\n'\
+        f'<code>🖥️ CPU usage  :</code> {cpuUsage}%\n'\
+        f'<code>👒 RAM usage  :</code> {memory.percent}%\n'\
+        f'<code>💽 Disk usage :</code> {disk}%\n'\
+        f'<code>💿 Free space :</code> {get_readable_file_size(free)}\n'\
+        f'<code>💿 Total space :</code> {get_readable_file_size(total)}\n\n'
             
     limitations = f'<b>LIMITATIONS</b>\n\n'
     
     for k, v in limit_mapping.items():
         if v == '':
             v = '∞'
-        elif k != 'User tasks':
+        elif k != '👤User tasks':
             v = f'{v}GB/Link'
         else:
             v = f'{v} Tasks/user'
-        limitations += f'<code>• {k:<11}:</code> {v}\n'
+        limitations += f'<code>🔰 {k:<11}:</code> {v}\n'
 
     stats = system_info + limitations
     reply_message = await sendMessage(message, stats, photo='IMAGES')
@@ -112,10 +112,10 @@ async def start(client, message):
         return await sendMessage(message, msg)
     elif await CustomFilters.authorized(client, message):
         help_command = f"/{BotCommands.HelpCommand}"
-        start_string = f'This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram.\n<b>Type {help_command} to get a list of available commands</b>'
+        start_string = f'ℹ️ This bot can not do anything.\n<b>Type {help_command} to get a list of available commands</b>'
         await sendMessage(message, start_string, photo='IMAGES')
     else:
-        await sendMessage(message, 'You Are not authorized user!', photo='IMAGES')
+        await sendMessage(message, '<b>⚠️ Access Denied!</b>', photo='IMAGES')
     await DbManager().update_pm_users(message.from_user.id)
 
 
@@ -137,7 +137,7 @@ async def restart(client, message):
 
 async def ping(_, message):
     start_time = int(round(time() * 1000))
-    reply = await sendMessage(message, 'Starting ping...')
+    reply = await sendMessage(message, '<b>🛰 Starting 𝓟𝓲𝓷𝓰...</b>')
     end_time = int(round(time() * 1000))
     value=(end_time - start_time)
     await editMessage(reply, f'{value} ms.')
@@ -274,7 +274,7 @@ async def restart_notification():
     now = datetime.now(timezone('Asia/Dhaka'))
     date = now.strftime('%d/%m/%y')
     time = now.strftime('%I:%M:%S %p')
-    rmsg = f'Restarted Successfully!\n\n<b>Date:</b> {date}\n<b>Time:</b> {time}'
+    rmsg = f'<b>♻️ 𝘙𝘦𝘴𝘵𝘢𝘳𝘵𝘦𝘥 𝘚𝘶𝘤𝘤𝘦𝘴𝘴𝘧𝘶𝘭𝘭𝘺! 🎉</b>\n\n🔰<b>Date:</b> {date}\n🔰<b>Time:</b> {time}'
     if await aiopath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
