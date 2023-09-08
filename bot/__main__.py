@@ -43,14 +43,14 @@ async def stats(_, message):
     cpuUsage = cpu_percent(interval=0.5)
     quote = Quote.print().split('―', 1)[0].strip().replace("“", "").replace("”", "")
     limit_mapping = {
-        'Torrent':    config_dict.get('TORRENT_LIMIT', '∞'),
-        'Gdrive':     config_dict.get('GDRIVE_LIMIT', '∞'),
-        'Ytdlp':      config_dict.get('YTDLP_LIMIT', '∞'),
-        'Direct':     config_dict.get('DIRECT_LIMIT', '∞'),
-        'Leech':      config_dict.get('LEECH_LIMIT', '∞'),
-        'Clone':      config_dict.get('CLONE_LIMIT', '∞'),
-        'Mega':       config_dict.get('MEGA_LIMIT', '∞'),
-        'User tasks': config_dict.get('USER_MAX_TASKS', '∞'),
+        'Torrent':    config_dict.get('🗿TORRENT_LIMIT', '∞'),
+        'Gdrive':     config_dict.get('♻️GDRIVE_LIMIT', '∞'),
+        'Ytdlp':      config_dict.get('💱YTDLP_LIMIT', '∞'),
+        'Direct':     config_dict.get('🔰DIRECT_LIMIT', '∞'),
+        'Leech':      config_dict.get('✳️LEECH_LIMIT', '∞'),
+        'Clone':      config_dict.get('💹CLONE_LIMIT', '∞'),
+        'Mega':       config_dict.get('⭕MEGA_LIMIT', '∞'),
+        'User tasks': config_dict.get('🔅USER_MAX_TASKS', '∞'),
     }
     system_info = f'<b>{quote}</b>\n\n'\
         f'<code>⏰ Bot uptime :</code> {currentTime}\n'\
@@ -115,7 +115,7 @@ async def start(client, message):
         start_string = f'ℹ️ This bot can not do anything.\n<b>Type {help_command} to get a list of available commands</b>'
         await sendMessage(message, start_string, photo='IMAGES')
     else:
-        await sendMessage(message, '<b>⚠️ Access Denied!</b>', photo='IMAGES')
+        await sendMessage(message, '<b>🗿 Access Denied!</b>', photo='IMAGES')
     await DbManager().update_pm_users(message.from_user.id)
 
 
