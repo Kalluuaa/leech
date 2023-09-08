@@ -41,8 +41,8 @@ PAGE_NO = 1
 STATUS_LIMIT = 4
 
 class MirrorStatus:
-    STATUS_UPLOADING = "✈️ 𝓤𝓹𝓵𝓸𝓪𝓭𝓲𝓷𝓰"
-    STATUS_DOWNLOADING = "🛩️ 𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌"
+    STATUS_UPLOADING = "✈️ 𝗨𝗣𝗟𝗢𝗗𝗜𝗡𝗚"
+    STATUS_DOWNLOADING = "🛩️ 𝐃𝐎𝐖𝐍𝐋𝐎𝐃𝐈𝐍𝐆"
     STATUS_CLONING = "🔁 𝕮𝖑𝖔𝖓𝖎𝖓𝖌"
     STATUS_QUEUEDL = "🔻 𝓓𝓛 𝓺𝓾𝓮𝓾𝓮𝓭"
     STATUS_QUEUEUP = "🔺 𝓤𝓛 𝓺𝓾𝓮𝓾𝓮𝓭"
@@ -153,7 +153,7 @@ def source(self):
     return (sender_chat.title if (sender_chat := self.message.sender_chat) else self.message.from_user.username or self.message.from_user.id)
 
 def get_readable_message():
-    msg = '<b>⚡️ Powered by -</b> <a href="https://t.me/ShoGuNPacKs">𝙎𝙝𝙤𝙂𝙪𝙉</a> ⚡️\n\n'
+    msg = '<b>⚡️ Powered by -</b> <a href="https://t.me/+I1Kl5CsMpvQ5NmE1">𝗠𝗔𝗫 𝗟𝗘𝗘𝗖𝗛 𝗭𝗢𝗡𝗘</a> ♻️\n\n'
     button = None
     tasks = len(download_dict)
     currentTime = get_readable_time(time() - botStartTime)
@@ -211,8 +211,8 @@ def get_readable_message():
     msg += f"\n<b>🚧 Tasks</b>: {tasks}{bmax_task}"
     msg += f"\n<b>⏰ Bot uptime</b>: {currentTime}"
     msg += f"\n<b>💽 Free disk space</b>: {get_readable_file_size(disk_usage('/usr/src/app/downloads/').free)}"
-    msg += f"\n<b>📡 Uploading speed</b>: {get_readable_file_size(up_speed)}/s"
-    msg += f"\n<b>🛩️ Downloading speed</b>: {get_readable_file_size(dl_speed)}/s"
+    msg += f"\n<b>🔺Uploading speed</b>: {get_readable_file_size(up_speed)}/s"
+    msg += f"\n<b>🔻Downloading speed</b>: {get_readable_file_size(dl_speed)}/s"
     return msg, button
 
 
