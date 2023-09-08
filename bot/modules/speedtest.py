@@ -11,7 +11,7 @@ from bot.helper.ext_utils.bot_utils import get_readable_file_size, new_task
 
 @new_task
 async def speedtest(_, message):
-    speed = await sendMessage(message, "Initializing Speedtest...")
+    speed = await sendMessage(message, "⚡Initializing Speedtest...")
     test = Speedtest()
     test.get_best_server()
     test.download()
@@ -20,7 +20,7 @@ async def speedtest(_, message):
     result = test.results.dict()
     path = result['share']
     string_speed = f'''
-<b>SPEEDTEST INFO</b>
+<b>🛠️SPEEDTEST INFO🛠️</b>
 <b>• Upload:</b> <code>{get_readable_file_size(result['upload'] / 8)}/s</code>
 <b>• Download:</b>  <code>{get_readable_file_size(result['download'] / 8)}/s</code>
 <b>• Ping:</b> <code>{result['ping']} ms</code>
