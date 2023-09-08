@@ -76,6 +76,6 @@ class TelegraphHelper:
         return
 
 
-telegraph = TelegraphHelper('𝙎𝙝𝙤𝙂𝙪𝙉', 'https://t.me/ShoGuNPacKs')
+telegraph = TelegraphHelper('𝗠𝗔𝗫 𝗟𝗘𝗘𝗖𝗛 𝗭𝗢𝗡𝗘', 'https://t.me/+I1Kl5CsMpvQ5NmE1')
 
 bot_loop.run_until_complete(telegraph.create_account())
