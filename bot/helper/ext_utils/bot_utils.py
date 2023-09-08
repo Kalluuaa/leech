@@ -169,8 +169,8 @@ def get_readable_message():
         msg +=  f"\n🏷️ 𝙏𝙞𝙩𝙡𝙚: {escape(f'{download.name()}')}\n"
         msg += f"<b>{download.status()}...</b>"
         if download.status() not in [MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_SEEDING]:
-            msg += f"\n🏹 {get_progress_bar_string(download.progress())} {download.progress()}"
-            msg += f"\n⏬ {download.processed_bytes()} of {download.size()}"
+            msg += f"\n💹 {get_progress_bar_string(download.progress())} {download.progress()}"
+            msg += f"\n☣️ {download.processed_bytes()} of {download.size()}"
             msg += f"\n🚀 𝙎𝙥𝙚𝙚𝙙: {download.speed()}"
             msg += f"\n👤 User: {source(download)}"
             msg += f'\n⌛ 𝙀𝙨𝙩𝙞𝙢𝙖𝙩𝙚𝙙: {download.eta()}'
