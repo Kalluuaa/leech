@@ -60,6 +60,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             buttons.ibutton("Reset Setting", f"userset {user_id} reset_all")
         buttons.ibutton("Close", f"userset {user_id} close")
         text = f'<b>User Settings for {name}</b>'
+        text += f'<b>⭐ Yours TG DC: {from_user.dc_id}</b>'
         button = buttons.build_menu(2)
     elif key == 'universal':
         buttons.ibutton("YT-DLP Options", f"userset {user_id} yt_opt")
@@ -75,10 +76,10 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
 
         text = f'<b>Universal Settings for {name}</b>\n\n'
-        text += f'<b>🚦 YT-DLP Options:</b> <b><code>{ytopt}</code></b>\n'
-        text += f'<b>🚦 Prefix:</b> <code>{prefix}</code>\n'
-        text += f'<b>🚦 Suffix:</b> <code>{suffix}</code>\n'
-        text += f'<b>🚦 Remname:</b> <code>{remname}</code>'
+        text += f'<b>⭐ YT-DLP Options:</b> <b><code>{ytopt}</code></b>\n'
+        text += f'<b>⭐ Prefix:</b> <code>{prefix}</code>\n'
+        text += f'<b>⭐ Suffix:</b> <code>{suffix}</code>\n'
+        text += f'<b>⭐ Remname:</b> <code>{remname}</code>'
         buttons.ibutton("Back", f"userset {user_id} back", "footer")
         buttons.ibutton("Close", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
@@ -90,8 +91,8 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.ibutton("User TDs", f"userset {user_id} user_tds")
 
         text = f'<b>Mirror Settings for {name}</b>\n\n'
-        text += f'<b>🚦 Rclone Config:</b> {rccmsg}\n'
-        text += f'<b>🚦 User TD Mode:</b> {tds_mode}'
+        text += f'<b>⭐ Rclone Config:</b> {rccmsg}\n'
+        text += f'<b>⭐ User TD Mode:</b> {tds_mode}'
 
         buttons.ibutton("Back", f"userset {user_id} back", "footer")
         buttons.ibutton("Close", f"userset {user_id} close", "footer")
@@ -123,14 +124,14 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         ldump = 'Not Exists' if (val:=user_dict.get('ldump', '')) == '' else val
 
         text = f'<b>Leech Settings for {name}</b>\n\n'
-        text += f'<b>🚦 Leech Type:</b> {ltype}\n'
-        text += f'<b>🚦 Custom Thumbnail:</b> {thumbmsg}\n'
-        text += f'<b>🚦 Leech Split Size:</b> <code>{split_size}</code>\n'
-        text += f'<b>🚦 Equal Splits:</b> {equal_splits}\n'
-        text += f'<b>🚦 Media Group:</b> {media_group}\n'
-        text += f'<b>🚦 Leech Caption:</b> <code>{escape(lcaption)}</code>\n'
-        text += f'<b>🚦 Leech Dump:</b> <code>{ldump}</code>\n'
-        text += f'<b>🚦 MediaInfo Mode:</b> <code>{mediainfo}</code>'
+        text += f'<b>⭐ Leech Type:</b> {ltype}\n'
+        text += f'<b>⭐ Custom Thumbnail:</b> {thumbmsg}\n'
+        text += f'<b>⭐ Leech Split Size:</b> <code>{split_size}</code>\n'
+        text += f'<b>⭐ Equal Splits:</b> {equal_splits}\n'
+        text += f'<b>⭐ Media Group:</b> {media_group}\n'
+        text += f'<b>⭐ Leech Caption:</b> <code>{escape(lcaption)}</code>\n'
+        text += f'<b>⭐ Leech Dump:</b> <code>{ldump}</code>\n'
+        text += f'<b>⭐ MediaInfo Mode:</b> <code>{mediainfo}</code>'
 
         buttons.ibutton("Back", f"userset {user_id} back", "footer")
         buttons.ibutton("Close", f"userset {user_id} close", "footer")
