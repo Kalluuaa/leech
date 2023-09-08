@@ -18,7 +18,7 @@ from bot.helper.ext_utils.telegraph_helper import telegraph
 
 
 async def gen_mediainfo(message, link=None, media=None, mmsg=None):
-    temp_send = await sendMessage(message, 'Generating MediaInfo...')
+    temp_send = await sendMessage(message, '♻️Generating MediaInfo...')
     try:
         path = "Mediainfo/"
         if not await aiopath.isdir(path):
