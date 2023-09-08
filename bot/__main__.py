@@ -120,7 +120,7 @@ async def start(client, message):
 
 
 async def restart(client, message):
-    restart_message = await sendMessage(message, 'Restarting...')
+    restart_message = await sendMessage(message, '🔄 Restarting...')
     if scheduler.running:
         scheduler.shutdown(wait=False)
     for interval in [QbInterval, Interval]:
@@ -166,8 +166,8 @@ async def aeoncb(_, query):
                 if ind == len(logFileLines): 
                     break
                 ind += 1
-            startLine = f"<b>Showing Last {ind} Lines from log.txt:</b> \n\n----------<b>START LOG</b>----------\n\n"
-            endLine = "\n----------<b>END LOG</b>----------"
+            startLine = f"<b>👀 Showing Last {ind} Lines from log.txt:</b> \n\n----------<b>🔰 START LOG</b>----------\n\n"
+            endLine = "\n----------<b>🔚 END LOG</b>----------"
             btn = ButtonMaker()
             btn.ibutton('Close', f'aeon {user_id} close')
             reply_message = await sendMessage(message, startLine + escape(Loglines) + endLine, btn.build_menu(1))
